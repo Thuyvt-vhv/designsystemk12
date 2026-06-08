@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lumin · K12Online Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/app.css">
+</head>
+<body>
+
+<!-- ════════ DOC TOPBAR ════════ -->
+<header class="topbar">
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+  <a class="brand" href="#overview">
+    <img src="styles/Asset 1 1.svg" alt="K12Online" class="brand-logo" height="24">
+  </a>
+  <div class="topbar-search">🔍 Tìm component… <kbd>⌘K</kbd></div>
+  <div class="topbar-actions">
+    <span class="ver-badge">v1.0</span>
+    <button class="theme-toggle" id="themeToggle" aria-label="Theme">🌙</button>
+  </div>
+</header>
+
+<!-- ════════ DOC SIDEBAR ════════ -->
+<nav class="sidebar" id="sidebar">
+  <div class="nav-group">
+    <div class="nav-group-label">Bắt đầu</div>
+    <a class="nav-link active" href="#overview"><span class="nl-icon">◆</span> Tổng quan</a>
+    <a class="nav-link" href="#appshell"><span class="nl-icon">▤</span> Sidebar & Top menu</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-group-label">Foundations</div>
+    <a class="nav-link" href="#color"><span class="nl-icon">🎨</span> Color brand</a>
+    <a class="nav-link" href="#typography"><span class="nl-icon">🔤</span> Typography</a>
+    <a class="nav-link" href="#icons"><span class="nl-icon">✦</span> Icons style</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-group-label">Buttons</div>
+    <a class="nav-link" href="#button"><span class="nl-icon">▭</span> Button</a>
+    <a class="nav-link" href="#button-group"><span class="nl-icon">⊟</span> Button group</a>
+    <a class="nav-link" href="#segmented"><span class="nl-icon">◫</span> Segmented bar</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-group-label">Inputs</div>
+    <a class="nav-link" href="#input"><span class="nl-icon">⌨</span> Input</a>
+    <a class="nav-link" href="#textarea"><span class="nl-icon">▤</span> Textarea</a>
+    <a class="nav-link" href="#select"><span class="nl-icon">▾</span> Select & Dropdown</a>
+    <a class="nav-link" href="#controls"><span class="nl-icon">☑</span> Check · Radio · Switch</a>
+    <a class="nav-link" href="#datetime"><span class="nl-icon">📅</span> Date & Time</a>
+    <a class="nav-link" href="#upload"><span class="nl-icon">⬆</span> Upload</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-group-label">Data display</div>
+    <a class="nav-link" href="#table"><span class="nl-icon">▦</span> Table & Bulk action</a>
+    <a class="nav-link" href="#tabs"><span class="nl-icon">⊞</span> Tabs</a>
+    <a class="nav-link" href="#breadcrumb"><span class="nl-icon">»</span> Breadcrumb</a>
+    <a class="nav-link" href="#pagination"><span class="nl-icon">⋯</span> Pagination</a>
+    <a class="nav-link" href="#treeview"><span class="nl-icon">🗂</span> Treeview</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-group-label">Feedback</div>
+    <a class="nav-link" href="#modal"><span class="nl-icon">▢</span> Modal dialogs</a>
+    <a class="nav-link" href="#toast"><span class="nl-icon">🔔</span> Toast message</a>
+    <a class="nav-link" href="#empty"><span class="nl-icon">📭</span> Empty states</a>
+  </div>
+  <div class="nav-group">
+    <div class="nav-group-label">Tài nguyên</div>
+    <a class="nav-link" href="#resources"><span class="nl-icon">📁</span> Files & Docs</a>
+  </div>
+</nav>
+
+<main class="main">
+
+<!-- ───── OVERVIEW ───── -->
+<section class="section" id="overview">
+  <div class="hero">
+    <span class="hero-badge">⬡ K12Online Design System · v1.0</span>
+    <h1>K12Online Design System</h1>
+    <p>Dựng lại đầy đủ thư viện component theo thiết kế Figma K12Online: Button, Input, Table, Modal, Toast, Upload, Date picker… đúng từng chi tiết.</p>
+    <div class="hero-meta">
+      <span class="hero-chip">🎨 Brand #005CB6 / #F16022</span>
+      <span class="hero-chip">♿ WCAG 2.2 AA</span>
+      <span class="hero-chip">🌗 Dark mode</span>
+      <span class="hero-chip">📱 Responsive</span>
+    </div>
+  </div>
+  <p class="muted">Toàn bộ component dưới đây render bằng HTML/CSS thật, dùng đúng design token (màu, spacing, radius). Bật <strong>Dark mode</strong> ở góc phải để xem theme tối.</p>
+</section>
+
+<!-- ───── APP SHELL ───── -->
+<section class="section" id="appshell">
+  <div class="eyebrow">Layout</div>
+  <h1>Sidebar & Top menu</h1>
+  <p class="lead">App shell của K12Online: thanh trên (logo, năm học, học kỳ, thông báo) + sidebar điều hướng.</p>
+  <div class="appshell">
+    <div class="app-topbar">
+      <button class="app-burger" aria-label="Menu">☰</button>
+      <div class="k12-logo">
+        <span class="lg"><span class="b">K12</span><span class="o">online</span></span>
+        <span class="sub"><span class="s1">Hệ thống học và quản lý thi trực tuyến</span><br><span class="s2">TRƯỜNG THPT VIETTEL</span></span>
+      </div>
+      <div class="right">
+        <span class="app-pill">Năm học 2022 - 2023 <span style="opacity:.5">▾</span></span>
+        <span class="app-pill">Học kỳ II <span style="opacity:.5">▾</span></span>
+        <span class="app-ic" title="Trang chủ">⌂</span>
+        <span class="app-ic" title="Thông báo">🔔<span class="nbadge">9</span></span>
+        <span class="app-ic" title="Ứng dụng">▦</span>
+        <span class="app-avatar"></span>
+      </div>
+    </div>
+    <div class="app-body">
+      <aside class="app-sidebar">
+        <div class="app-nav active"><span class="an-ic">⌂</span> Dashboard</div>
+        <div class="app-nav"><span class="an-ic">▤</span> Quản lý học sinh</div>
+        <div class="app-nav"><span class="an-ic">👥</span> Giáo viên</div>
+        <div class="app-nav"><span class="an-ic">📚</span> Lớp học</div>
+        <div class="app-nav"><span class="an-ic">📝</span> Bài kiểm tra</div>
+        <div class="app-nav"><span class="an-ic">📊</span> Báo cáo</div>
+        <div class="app-nav"><span class="an-ic">🗓</span> Lịch học</div>
+        <div class="app-nav"><span class="an-ic">⚙</span> Cài đặt</div>
+        <div class="app-nav"><span class="an-ic">＋</span> Xem thêm</div>
+      </aside>
+      <div class="app-content">
+        <div class="row" style="justify-content:space-between;margin-bottom:16px">
+          <h3 style="margin:0">Dashboard</h3>
+          <button class="btn btn--primary btn--md"><span class="ic">＋</span> Thêm mới</button>
+        </div>
+        <div class="grid-4">
+          <div class="card card-pad"><div class="muted">Tổng học sinh</div><div style="font-size:26px;font-weight:800;color:var(--text-primary)">1.284</div><span class="status active"><span class="dot"></span> +12%</span></div>
+          <div class="card card-pad"><div class="muted">Giáo viên</div><div style="font-size:26px;font-weight:800;color:var(--text-primary)">86</div><span class="status active"><span class="dot"></span> +3%</span></div>
+          <div class="card card-pad"><div class="muted">Lớp học</div><div style="font-size:26px;font-weight:800;color:var(--text-primary)">42</div><span class="status inactive"><span class="dot"></span> 0%</span></div>
+          <div class="card card-pad"><div class="muted">Bài thi tháng</div><div style="font-size:26px;font-weight:800;color:var(--text-primary)">315</div><span class="status pending"><span class="dot"></span> đang chấm</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="demo-caption" style="border:1px solid var(--border-default);border-top:none;border-radius:0 0 var(--r-lg) var(--r-lg);margin-top:-8px">⬡ Active nav: nền xanh nhạt + chữ xanh · Logo: K12 xanh + online cam</div>
+</section>
+
+<!-- ───── COLOR ───── -->
+<section class="section" id="color">
+  <div class="eyebrow">Foundations</div>
+  <h1>Color brand</h1>
+  <p class="lead">Brand Blue (#005CB6) + Orange (#F16022), thang xám trung tính, 4 màu semantic.</p>
+  <h3>Brand · Blue (Primary)</h3><div class="swatch-row" id="sw-blue"></div>
+  <h3>Brand · Orange (Secondary)</h3><div class="swatch-row" id="sw-orange"></div>
+  <h3>Neutral · Gray</h3><div class="swatch-row" id="sw-gray"></div>
+  <h3>Semantic colors</h3>
+  <div class="grid-4">
+    <div class="swatch-card"><div class="sw" style="background:var(--c-success-500)"></div><div class="sw-meta"><div class="sw-name">Success</div><div class="sw-val">#12B76A</div></div></div>
+    <div class="swatch-card"><div class="sw" style="background:var(--c-warning-500)"></div><div class="sw-meta"><div class="sw-name">Warning</div><div class="sw-val">#F79009</div></div></div>
+    <div class="swatch-card"><div class="sw" style="background:var(--c-error-500)"></div><div class="sw-meta"><div class="sw-name">Error</div><div class="sw-val">#F04438</div></div></div>
+    <div class="swatch-card"><div class="sw" style="background:var(--c-info-500)"></div><div class="sw-meta"><div class="sw-name">Info</div><div class="sw-val">#2E90FA</div></div></div>
+  </div>
+</section>
+
+<!-- ───── TYPOGRAPHY ───── -->
+<section class="section" id="typography">
+  <div class="eyebrow">Foundations</div>
+  <h1>Typography</h1>
+  <p class="lead">Inter — hỗ trợ tiếng Việt. Top menu: tên trường 14px bold, mô tả 12px regular.</p>
+  <div class="demo"><div class="demo-stage col" style="background:var(--surface-default);gap:0">
+    <div class="type-row"><div class="t-meta">Display / 48 / 800</div><div class="t-sample" style="font-size:48px;font-weight:800;letter-spacing:-.02em">Giáo dục số</div></div>
+    <div class="type-row"><div class="t-meta">Heading / 30 / 700</div><div class="t-sample" style="font-size:30px;font-weight:700">Quản lý đào tạo</div></div>
+    <div class="type-row"><div class="t-meta">Heading / 24 / 700</div><div class="t-sample" style="font-size:24px;font-weight:700">Danh sách học sinh</div></div>
+    <div class="type-row"><div class="t-meta">Heading / 20 / 600</div><div class="t-sample" style="font-size:20px;font-weight:600">Bảng điểm học kỳ</div></div>
+    <div class="type-row"><div class="t-meta">Body / 16 / 400</div><div class="t-sample" style="font-size:16px">Văn bản nội dung mặc định, dễ đọc.</div></div>
+    <div class="type-row"><div class="t-meta">Body / 14 / 400 (default)</div><div class="t-sample" style="font-size:14px">Văn bản phụ, mô tả trong giao diện.</div></div>
+    <div class="type-row"><div class="t-meta">Label / 14 / 600</div><div class="t-sample" style="font-size:14px;font-weight:600">Họ và tên học sinh</div></div>
+    <div class="type-row"><div class="t-meta">Caption / 12 / 400</div><div class="t-sample" style="font-size:12px;color:var(--text-tertiary)">Cập nhật 2 phút trước</div></div>
+  </div></div>
+</section>
+
+<!-- ───── ICONS ───── -->
+<section class="section" id="icons">
+  <div class="eyebrow">Foundations</div>
+  <h1>Icons style</h1>
+  <p class="lead">Hai style icon: phẳng (đơn sắc) cho UI và minh họa màu (3D) cho menu chức năng giáo dục.</p>
+  <div class="demo"><div class="demo-stage">
+    <div style="text-align:center"><div style="width:48px;height:48px;border-radius:50%;background:var(--c-blue-50);color:var(--c-blue-600);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto">✈</div><div class="muted" style="margin-top:6px">Gửi hồ sơ</div></div>
+    <div style="text-align:center"><div style="width:48px;height:48px;border-radius:50%;background:var(--c-blue-50);color:var(--c-blue-600);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto">💬</div><div class="muted" style="margin-top:6px">Tin nhắn</div></div>
+    <div style="text-align:center"><div style="width:48px;height:48px;border-radius:50%;background:var(--c-blue-50);color:var(--c-blue-600);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto">📚</div><div class="muted" style="margin-top:6px">Bài giảng</div></div>
+    <div style="text-align:center"><div style="width:48px;height:48px;border-radius:50%;background:var(--c-error-50);color:var(--c-error-500);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto">📝</div><div class="muted" style="margin-top:6px">Bài kiểm tra</div></div>
+    <div style="text-align:center"><div style="width:48px;height:48px;border-radius:50%;background:var(--c-success-50);color:var(--c-success-600);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto">▶</div><div class="muted" style="margin-top:6px">Lớp học ảo</div></div>
+    <div style="text-align:center"><div style="width:48px;height:48px;border-radius:50%;background:var(--c-warning-50);color:var(--c-warning-600);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto">🕐</div><div class="muted" style="margin-top:6px">Lịch sử học</div></div>
+  </div><div class="demo-caption">⬡ Icon minh họa gốc là asset PNG/SVG riêng — đây là bản render gần đúng bằng emoji</div></div>
+</section>
+
+<!-- ───── BUTTON ───── -->
+<section class="section" id="button">
+  <div class="eyebrow">Buttons</div>
+  <h1>Button</h1>
+  <p class="lead">5 kiểu: Primary, Secondary (viền xanh), Tertiary (viền xám), Danger (viền đỏ), Button link. Cao 36px · radius 8px · icon 20px · font 14px medium.</p>
+
+  <h3>Variants × States</h3>
+  <div class="demo"><div class="demo-stage col" style="gap:18px">
+    <div class="row"><span style="width:90px" class="muted">Primary</span>
+      <button class="btn btn--primary btn--md"><span class="ic">＋</span> Button CTA</button>
+      <button class="btn btn--primary btn--md" style="background:var(--c-blue-800)"><span class="ic">＋</span> Hover</button>
+      <button class="btn btn--primary btn--md" style="box-shadow:var(--focus-ring)"><span class="ic">＋</span> Focus</button>
+      <button class="btn btn--primary btn--md" disabled><span class="ic">＋</span> Disable</button>
+    </div>
+    <div class="row"><span style="width:90px" class="muted">Secondary</span>
+      <button class="btn btn--secondary btn--md">Button CTA</button>
+      <button class="btn btn--secondary btn--md" style="background:var(--c-blue-50)">Hover</button>
+      <button class="btn btn--secondary btn--md" style="box-shadow:var(--focus-ring)">Focus</button>
+      <button class="btn btn--secondary btn--md" disabled>Disable</button>
+    </div>
+    <div class="row"><span style="width:90px" class="muted">Tertiary</span>
+      <button class="btn btn--tertiary btn--md">Button CTA</button>
+      <button class="btn btn--tertiary btn--md" style="background:var(--surface-muted)">Hover</button>
+      <button class="btn btn--tertiary btn--md" style="box-shadow:var(--focus-ring)">Focus</button>
+      <button class="btn btn--tertiary btn--md" disabled>Disable</button>
+    </div>
+    <div class="row"><span style="width:90px" class="muted">Danger</span>
+      <button class="btn btn--danger btn--md">Button CTA</button>
+      <button class="btn btn--danger btn--md" style="background:var(--c-error-50)">Hover</button>
+      <button class="btn btn--danger btn--md" style="box-shadow:var(--focus-ring-error)">Focus</button>
+      <button class="btn btn--danger btn--md" disabled>Disable</button>
+    </div>
+    <div class="row"><span style="width:90px" class="muted">Only icon</span>
+      <button class="icon-btn" aria-label="Đóng">✕</button>
+      <button class="icon-btn" aria-label="Đóng" style="background:var(--surface-overlay)">✕</button>
+      <button class="icon-btn bordered" aria-label="Cài đặt">⚙</button>
+    </div>
+    <div class="row"><span style="width:90px" class="muted">Button link</span>
+      <button class="btn btn--link">Button link</button>
+      <button class="btn btn--link" disabled>Disable</button>
+    </div>
+  </div><div class="demo-caption">Default · Hover (đậm 10%) · Focus (đậm 20% + ring) · Disable (xám)</div></div>
+
+  <h3>Sizes</h3>
+  <div class="demo"><div class="demo-stage" style="align-items:center">
+    <button class="btn btn--primary btn--xs"><span class="ic">＋</span> XS</button>
+    <button class="btn btn--primary btn--sm"><span class="ic">＋</span> Small</button>
+    <button class="btn btn--primary btn--md"><span class="ic">＋</span> Medium</button>
+    <button class="btn btn--primary btn--lg"><span class="ic">＋</span> Large</button>
+    <button class="btn btn--primary btn--xl"><span class="ic">＋</span> Extra Large</button>
+    <button class="btn btn--primary btn--md" aria-busy="true"><span class="spinner"></span> Loading</button>
+  </div><div class="demo-caption">28 · 32 · 36 · 40 · 44 px — MD mặc định</div></div>
+
+  <h3>Specs</h3>
+  <table class="spec">
+    <tr><th>Thuộc tính</th><th>Giá trị</th></tr>
+    <tr><td>Height</td><td>36px (MD)</td></tr>
+    <tr><td>Padding</td><td>12px (cạnh icon) · 8px (gap) · 16px (cạnh phải)</td></tr>
+    <tr><td>Corner radius</td><td>8px</td></tr>
+    <tr><td>Font</td><td>14px medium · line-height 20px</td></tr>
+    <tr><td>Icon</td><td>20px</td></tr>
+  </table>
+</section>
+
+<!-- ───── BUTTON GROUP ───── -->
+<section class="section" id="button-group">
+  <div class="eyebrow">Buttons</div>
+  <h1>Button group (Split button)</h1>
+  <p class="lead">Nút chính + mũi tên mở menu phụ. Dùng cho "Xuất excel", "Thêm mới".</p>
+  <div class="demo"><div class="demo-stage start" style="gap:48px">
+    <div class="col" style="gap:0">
+      <div class="btn-split is-secondary">
+        <button class="btn btn--secondary btn--md main-act"><span class="ic">⎋</span> Xuất excel</button>
+        <button class="btn btn--secondary btn--md caret">▾</button>
+      </div>
+      <div class="menu" style="margin-top:6px;width:200px">
+        <div class="menu-item"><span class="f-icon pdf mi-icon" style="width:22px;height:18px;border-radius:3px">PDF</span> Xuất pdf</div>
+        <div class="menu-item"><span class="f-icon doc mi-icon" style="width:22px;height:18px;border-radius:3px">DOC</span> Xuất word</div>
+        <div class="menu-item"><span class="f-icon ppt mi-icon" style="width:22px;height:18px;border-radius:3px">P</span> Xuất ppt</div>
+      </div>
+    </div>
+    <div class="col" style="gap:0">
+      <div class="btn-split">
+        <button class="btn btn--primary btn--md main-act"><span class="ic">＋</span> Thêm mới</button>
+        <button class="btn btn--primary btn--md caret">▾</button>
+      </div>
+      <div class="menu" style="margin-top:6px;width:160px">
+        <div class="menu-item">📁 Thư mục</div>
+        <div class="menu-item">📄 Tài liệu</div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ───── SEGMENTED ───── -->
+<section class="section" id="segmented">
+  <div class="eyebrow">Buttons</div>
+  <h1>Segmented bar</h1>
+  <p class="lead">Chọn 1 trong nhiều phương án song song. Active = nền trắng nổi.</p>
+  <div class="demo"><div class="demo-stage col">
+    <div class="segmented">
+      <button class="seg active">Years</button><button class="seg">Months</button><button class="seg">Days</button>
+    </div>
+    <div class="segmented">
+      <button class="seg active">Years <span class="cnt">52</span></button>
+      <button class="seg">Months <span class="cnt">20</span></button>
+      <button class="seg">Days <span class="cnt">32</span></button>
+    </div>
+  </div></div>
+</section>
+
+<!-- ───── INPUT ───── -->
+<section class="section" id="input">
+  <div class="eyebrow">Inputs</div>
+  <h1>Input</h1>
+  <p class="lead">Label trên · nhiều biến thể: search, icon, password, addon, nút phụ, bộ đếm số lượng.</p>
+  <div class="demo"><div class="demo-stage start" style="gap:24px 32px">
+    <div class="field"><label class="field-label">Label input</label><div class="input-group"><span class="ig-icon">🔍</span><input class="input has-left" placeholder="Search"></div></div>
+    <div class="field"><label class="field-label">Label input</label><input class="input" placeholder="Type here"></div>
+    <div class="field"><label class="field-label">Label input</label><input class="input" value="John is here |"></div>
+    <div class="field"><label class="field-label">Label input <span class="req">*</span></label><div class="input-group"><input class="input has-right" placeholder="Type here"><span class="ig-icon right">👁</span></div></div>
+    <div class="field"><label class="field-label">Label input</label><input class="input error" placeholder="Type here"><span class="field-hint error">Please type correct text</span></div>
+    <div class="field"><label class="field-label">Label input</label><div class="input-addon"><input class="input" placeholder="Placeholder"><button class="addon-btn">Button</button></div></div>
+    <div class="field"><label class="field-label">Quantity</label><div class="stepper"><button>−</button><span class="val">1</span><button>＋</button></div></div>
+  </div></div>
+</section>
+
+<!-- ───── TEXTAREA ───── -->
+<section class="section" id="textarea">
+  <div class="eyebrow">Inputs</div>
+  <h1>Textarea</h1>
+  <p class="lead">Ô nhập nhiều dòng + biến thể rich text với thanh công cụ định dạng.</p>
+  <div class="demo"><div class="demo-stage start" style="gap:24px">
+    <div class="field"><label class="field-label">Label input</label><textarea class="input" placeholder="Type here"></textarea></div>
+    <div class="field"><label class="field-label">Label input</label><textarea class="input error" placeholder="Type here"></textarea><span class="field-hint error">Validation text of warning</span></div>
+    <div class="field" style="max-width:420px"><label class="field-label">Label input</label>
+      <div class="rte">
+        <div class="rte-toolbar">
+          <button><b>B</b></button><button><i>I</i></button><button><u>U</u></button><span class="div"></span>
+          <button>≡</button><button>⩭</button><span class="div"></span><button>•≣</button><button>1≣</button><span class="div"></span><button>@</button>
+        </div>
+        <div class="rte-body" contenteditable="true">Here is written text about the company that you'll be working with.</div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ───── SELECT ───── -->
+<section class="section" id="select">
+  <div class="eyebrow">Inputs</div>
+  <h1>Select & Dropdown</h1>
+  <p class="lead">Trigger "--Chọn-- ▾". Option chọn = nền xanh nhạt. Hỗ trợ multi-select chips và action menu.</p>
+  <div class="demo"><div class="demo-stage start" style="gap:32px">
+    <div class="select">
+      <label class="field-label" style="display:block;margin-bottom:6px">Label <span class="req">*</span></label>
+      <div class="select-trigger" data-select><span class="ph">--Chọn--</span><span class="caret">▾</span></div>
+      <div class="select-menu" hidden>
+        <div class="select-opt">Nội dung 1</div>
+        <div class="select-opt selected">Nội dung 2 <span class="check">✓</span></div>
+        <div class="select-opt">Nội dung 3</div>
+        <div class="select-opt">Nội dung 4</div>
+        <div class="select-opt">Nội dung 5</div>
+      </div>
+    </div>
+    <div class="select">
+      <label class="field-label" style="display:block;margin-bottom:6px">Multi-select</label>
+      <div class="select-trigger" data-select>
+        <div class="select-chips"><span class="select-chip">Nội dung 1 <span class="x">✕</span></span><span class="select-chip">Nội dung 2 <span class="x">✕</span></span></div>
+        <span class="caret">▾</span>
+      </div>
+    </div>
+  </div></div>
+  <h3>Action menu (kebab)</h3>
+  <div class="demo"><div class="demo-stage start" style="gap:40px">
+    <div class="menu" style="width:200px">
+      <div class="menu-item"><span class="mi-icon">✏</span> Sửa</div>
+      <div class="menu-item active"><span class="mi-icon">⧉</span> Nhân bản</div>
+      <div class="menu-item"><span class="mi-icon">↗</span> Chia sẻ</div>
+      <div class="menu-divider"></div>
+      <div class="menu-item danger"><span class="mi-icon">🗑</span> Xóa</div>
+    </div>
+    <div class="menu" style="width:200px">
+      <div class="menu-item"><span class="mi-icon">✕</span> Báo hỏng</div>
+      <div class="menu-item"><span class="mi-icon">⊘</span> Báo mất</div>
+      <div class="menu-item"><span class="mi-icon">⊗</span> Báo hết</div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ───── CONTROLS ───── -->
+<section class="section" id="controls">
+  <div class="eyebrow">Inputs</div>
+  <h1>Check · Radio · Switch</h1>
+  <p class="lead">Đầy đủ focus ring. Switch On hiển thị nhãn xanh lá. Có biến thể card.</p>
+  <div class="demo"><div class="demo-stage start" style="gap:48px">
+    <div class="stack-sm"><span class="demo-label">Checkbox</span>
+      <label class="check"><input type="checkbox" checked><span class="box"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 6l2.5 2.5 4.5-5"/></svg></span> Option name</label>
+      <label class="check"><input type="checkbox"><span class="box"></span> Option name</label>
+      <label class="check-card selected"><input type="checkbox" checked hidden><span class="box" style="margin-top:1px"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2"><path d="M2.5 6l2.5 2.5 4.5-5"/></svg></span><div><div class="cc-title">Option name</div><div class="cc-desc">Description text</div></div></label>
+    </div>
+    <div class="stack-sm"><span class="demo-label">Radio</span>
+      <label class="check radio"><input type="radio" name="r1" checked><span class="box"></span> Option name</label>
+      <label class="check radio"><input type="radio" name="r1"><span class="box"></span> Option name</label>
+      <label class="check-card selected"><input type="radio" name="r2" checked hidden><span class="box radio" style="border-radius:50%;border:5px solid var(--c-blue-700);background:#fff;margin-top:1px"></span><div><div class="cc-title">Option name</div><div class="cc-desc">Description text</div></div></label>
+    </div>
+    <div class="stack-sm"><span class="demo-label">Switch</span>
+      <label class="switch"><input type="checkbox" checked><span class="track"></span> <span class="state-on">On</span></label>
+      <label class="switch"><input type="checkbox"><span class="track"></span> <span class="state-off">Off</span></label>
+      <label class="switch"><input type="checkbox" checked><span class="track"></span> Nhận thông báo</label>
+    </div>
+  </div></div>
+</section>
+
+<!-- ───── DATE & TIME ───── -->
+<section class="section" id="datetime">
+  <div class="eyebrow">Inputs</div>
+  <h1>Date & Time</h1>
+  <p class="lead">Ô ngày/giờ + lịch chọn. Ngày chọn = tròn xanh, khoảng = dải xanh nhạt.</p>
+  <div class="demo"><div class="demo-stage start" style="gap:32px">
+    <div class="col" style="gap:14px;max-width:220px">
+      <div class="field"><label class="field-label">Date</label><div class="input-group"><input class="input has-right" value="25/10/2023"><span class="ig-icon right">📅</span></div></div>
+      <div class="field"><label class="field-label">Time</label><div class="input-group"><input class="input has-right" value="08:00 AM"><span class="ig-icon right">🕐</span></div></div>
+    </div>
+    <div class="calendar" id="calendar"></div>
+  </div></div>
+</section>
+
+<!-- ───── UPLOAD ───── -->
+<section class="section" id="upload">
+  <div class="eyebrow">Inputs</div>
+  <h1>Upload</h1>
+  <p class="lead">Kéo-thả hoặc chọn file. Hover = nền xanh nhạt. Hiển thị file đã tải với icon định dạng.</p>
+  <div class="demo"><div class="demo-stage start" style="gap:24px">
+    <div class="upload">
+      <div class="up-icon">⬆</div>
+      <div class="up-title">Chọn file</div>
+      <div class="up-hint">Tải lên file định dạng .doc, .docx, .xls, .pdf… tối đa 20MB</div>
+    </div>
+    <div class="col" style="gap:10px">
+      <div class="file-row"><span class="f-icon pdf">PDF</span><div><div class="f-name">Name file.pdf</div><div class="f-size">12.12 MB</div></div><span class="f-del">🗑</span></div>
+      <div class="file-row"><span class="f-icon doc">DOC</span><div><div class="f-name">Name file.doc</div><div class="f-size">11.05 MB</div></div><span class="f-del">🗑</span></div>
+      <div class="file-row"><span class="f-icon xls">XLS</span><div style="flex:1"><div class="f-name">Name file.xls</div><div class="progress" style="margin-top:4px"><div class="bar" style="width:70%"></div></div></div><span class="f-del">🗑</span></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ───── TABLE ───── -->
+<section class="section" id="table">
+  <div class="eyebrow">Data display</div>
+  <h1>Table & Bulk action</h1>
+  <p class="lead">Bảng dữ liệu lớn: chọn nhiều dòng, bulk action, status, cột thao tác (xem/sửa/khóa/xóa), phân trang.</p>
+  <div class="row" style="justify-content:space-between">
+    <h3 style="margin:0">Học sinh</h3>
+    <div class="row">
+      <button class="btn btn--secondary btn--sm"><span class="ic">⎘</span> Nhập excel</button>
+      <button class="btn btn--secondary btn--sm"><span class="ic">⎋</span> Xuất excel</button>
+      <button class="btn btn--primary btn--sm"><span class="ic">＋</span> Thêm mới</button>
+    </div>
+  </div>
+  <div class="tbl-toolbar">
+    <span class="sel-info">Đã chọn 3</span>
+    <button class="btn btn--link btn--sm">Bỏ chọn</button>
+    <button class="btn btn--tertiary btn--sm"><span class="ic">📋</span> Giao nhiệm vụ</button>
+    <button class="btn btn--tertiary btn--sm"><span class="ic">✉</span> Gửi email</button>
+    <button class="btn btn--danger btn--sm"><span class="ic">🗑</span> Xóa</button>
+  </div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr>
+        <th style="width:36px"><label class="check"><input type="checkbox"><span class="box"></span></label></th>
+        <th>STT</th><th>Họ và tên</th><th>Trạng thái</th><th>Số CCCD</th><th>Mã học sinh</th><th>Đơn vị quản lý</th><th>Hành động</th>
+      </tr></thead>
+      <tbody id="tbl-body"></tbody>
+    </table>
+  </div>
+  <div class="tbl-foot">
+    <span class="segmented" style="padding:2px"><button class="seg active">20 / Trang ▾</button></span>
+    <span>Tổng số bản ghi: 915</span>
+    <span style="flex:1"></span>
+    <div class="pagination">
+      <button class="pg nav">‹</button>
+      <button class="pg">1</button><button class="pg active">2</button><button class="pg">3</button>
+      <button class="pg dots">…</button><button class="pg">8</button><button class="pg">9</button><button class="pg">10</button>
+      <button class="pg nav">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- ───── TABS ───── -->
+<section class="section" id="tabs">
+  <div class="eyebrow">Data display</div>
+  <h1>Tabs</h1>
+  <p class="lead">3 loại: chữ thường, có icon, có badge số đếm. Active = chữ xanh + gạch chân xanh.</p>
+  <div class="demo"><div class="demo-stage col" style="gap:24px;background:var(--surface-default)">
+    <div class="tabs"><button class="tab active">Tab 1</button><button class="tab">Tab 2</button><button class="tab">Tab 3</button><button class="tab">Tab 4</button><button class="tab">Tab 5</button></div>
+    <div class="tabs"><button class="tab active">👤 Tab 1</button><button class="tab">☺ Tab 2</button><button class="tab">👍 Tab 3</button><button class="tab">🔔 Tab 4</button><button class="tab">◔ Tab 5</button></div>
+    <div class="tabs"><button class="tab active">Tab 1 <span class="tab-cnt">52</span></button><button class="tab">Tab 2 <span class="tab-cnt">20</span></button><button class="tab">Tab 3 <span class="tab-cnt">10</span></button><button class="tab">Tab 4 <span class="tab-cnt">12</span></button><button class="tab">Tab 5 <span class="tab-cnt">4</span></button></div>
+  </div></div>
+</section>
+
+<!-- ───── BREADCRUMB ───── -->
+<section class="section" id="breadcrumb">
+  <div class="eyebrow">Data display</div>
+  <h1>Breadcrumb</h1>
+  <p class="lead">Điều hướng phân cấp. Trang hiện tại in đậm.</p>
+  <div class="demo"><div class="demo-stage">
+    <nav class="bc"><a href="#">Home</a><span class="sep">/</span><a href="#">About</a><span class="sep">/</span><a href="#">Our history</a><span class="sep">/</span><span class="cur">Gallery</span></nav>
+  </div></div>
+</section>
+
+<!-- ───── PAGINATION ───── -->
+<section class="section" id="pagination">
+  <div class="eyebrow">Data display</div>
+  <h1>Pagination</h1>
+  <p class="lead">Số dòng/trang + tổng bản ghi + điều hướng trang. Trang hiện tại = tròn xanh đậm.</p>
+  <div class="demo"><div class="demo-stage" style="background:var(--surface-default);justify-content:space-between">
+    <span class="muted">Tổng số bản ghi: 915</span>
+    <div class="pagination">
+      <button class="pg nav">‹</button>
+      <button class="pg">1</button><button class="pg active">2</button><button class="pg">3</button>
+      <button class="pg dots">…</button><button class="pg">8</button><button class="pg">9</button><button class="pg">10</button>
+      <button class="pg nav">›</button>
+    </div>
+  </div></div>
+  <p class="muted">⬡ Trong Figma gốc, trang active là tròn tím (mặc định template). Tôi dùng <strong>xanh brand #005CB6</strong> cho nhất quán hệ thống — nói nếu bạn muốn giữ tím.</p>
+</section>
+
+<!-- ───── TREEVIEW ───── -->
+<section class="section" id="treeview">
+  <div class="eyebrow">Data display</div>
+  <h1>Treeview</h1>
+  <p class="lead">Cây thư mục/tệp có thể mở-đóng. Folder xanh, file xám.</p>
+  <div class="demo"><div class="demo-stage start"><div class="tree" id="tree"></div></div></div>
+</section>
+
+<!-- ───── MODAL ───── -->
+<section class="section" id="modal">
+  <div class="eyebrow">Feedback</div>
+  <h1>Modal dialogs</h1>
+  <p class="lead">Confirm xóa → nút đỏ. Confirm duyệt → nút xanh. Footer căn phải: Hủy bỏ + hành động.</p>
+  <div class="demo"><div class="demo-stage center" style="background:var(--c-gray-200);gap:24px;flex-wrap:wrap">
+    <div class="modal-shell" style="max-width:420px">
+      <div class="modal-head"><span class="modal-title">Xóa tài khoản</span><button class="modal-x">✕</button></div>
+      <div class="modal-body">Bạn có chắc chắn muốn xóa tài khoản <strong>Nguyễn Thị Hồng Thắm</strong> không?<br><br><strong>Lưu ý:</strong> Xóa xong không thể khôi phục lại được</div>
+      <div class="modal-foot"><button class="btn btn--tertiary btn--md">Hủy bỏ</button><button class="btn btn--destructive btn--md">Xóa</button></div>
+    </div>
+    <div class="modal-shell" style="max-width:420px">
+      <div class="modal-head"><span class="modal-title">Duyệt bài giảng</span><button class="modal-x">✕</button></div>
+      <div class="modal-body">Bạn có chắc chắn muốn duyệt bài giảng <strong>[Tên bài giảng]</strong></div>
+      <div class="modal-foot"><button class="btn btn--tertiary btn--md">Hủy bỏ</button><button class="btn btn--primary btn--md">Duyệt</button></div>
+    </div>
+  </div></div>
+  <h3>Form modal</h3>
+  <div class="demo"><div class="demo-stage center" style="background:var(--c-gray-200)">
+    <div class="modal-shell" style="max-width:520px">
+      <div class="modal-head"><span class="modal-title">Thêm mới tài liệu</span><button class="modal-x">✕</button></div>
+      <div class="modal-body">
+        <div class="field" style="max-width:none;margin-bottom:14px"><label class="field-label">Tên tài liệu <span class="req">*</span></label><input class="input" placeholder="Nhập tên tài liệu"></div>
+        <div class="grid-2" style="margin-bottom:14px">
+          <div class="field" style="max-width:none"><label class="field-label">Loại</label><div class="select"><div class="select-trigger" data-select><span class="ph">--Chọn--</span><span class="caret">▾</span></div></div></div>
+          <div class="field" style="max-width:none"><label class="field-label">Ngày tạo</label><div class="input-group"><input class="input has-right" value="25/10/2023"><span class="ig-icon right">📅</span></div></div>
+        </div>
+        <div class="upload" style="max-width:none"><div class="up-icon">⬆</div><div class="up-title">Chọn file</div><div class="up-hint">.doc, .pdf… tối đa 20MB</div></div>
+      </div>
+      <div class="modal-foot"><button class="btn btn--tertiary btn--md">Hủy bỏ</button><button class="btn btn--primary btn--md">Lưu</button></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ───── TOAST ───── -->
+<section class="section" id="toast">
+  <div class="eyebrow">Feedback</div>
+  <h1>Toast message</h1>
+  <p class="lead">Thông báo nổi với viền màu dưới đáy + icon tròn. Success / Thất bại / Thông báo.</p>
+  <div class="demo"><div class="demo-stage col center" style="gap:16px">
+    <div class="toast success"><span class="t-icon">✓</span><div class="t-body"><div class="t-title">Thành công</div><div class="t-msg">Thêm mới bản ghi thành công</div></div><span class="t-close">✕</span></div>
+    <div class="toast error"><span class="t-icon">✕</span><div class="t-body"><div class="t-title">Thất bại</div><div class="t-msg">Thêm mới thất bại</div></div><span class="t-close">✕</span></div>
+    <div class="toast warning"><span class="t-icon">!</span><div class="t-body"><div class="t-title">Thông báo</div><div class="t-msg">Dữ liệu lớn, vui lòng chờ thêm</div></div><span class="t-close">✕</span></div>
+  </div></div>
+  <h3>Alert (inline)</h3>
+  <div class="demo"><div class="demo-stage col">
+    <div class="alert alert--info"><span class="a-icon">ℹ</span><div><div class="a-title">Lịch thi đã cập nhật</div>Kỳ thi học kỳ 1 bắt đầu từ 20/12/2026.</div></div>
+    <div class="alert alert--warning"><span class="a-icon">⚠</span><div><div class="a-title">Sắp hết thời gian</div>Bạn còn 5 phút để hoàn thành.</div></div>
+  </div></div>
+</section>
+
+<!-- ───── EMPTY STATE ───── -->
+<section class="section" id="empty">
+  <div class="eyebrow">Feedback</div>
+  <h1>Empty states</h1>
+  <p class="lead">Khi không có dữ liệu hoặc không tìm thấy kết quả.</p>
+  <div class="grid-2">
+    <div class="demo"><div class="demo-stage center" style="background:var(--surface-default)"><div class="empty"><div class="e-illo">📭</div><div class="e-title">Không có dữ liệu nào!</div><div class="e-desc">Hãy thêm bản ghi đầu tiên cho danh sách này.</div><button class="btn btn--primary btn--md" style="margin-top:10px"><span class="ic">＋</span> Thêm mới</button></div></div></div>
+    <div class="demo"><div class="demo-stage center" style="background:var(--surface-default)"><div class="empty"><div class="e-illo">🔍</div><div class="e-title">Không tìm thấy kết quả tìm kiếm!</div><div class="e-desc">Thử từ khóa khác hoặc bỏ bớt bộ lọc.</div></div></div></div>
+  </div>
+</section>
+
+<!-- ───── RESOURCES ───── -->
+<section class="section" id="resources">
+  <div class="eyebrow">Tài nguyên</div>
+  <h1>Files & Documentation</h1>
+  <table class="spec">
+    <tr><th>Tài liệu</th><th>Nội dung</th></tr>
+    <tr><td><a href="docs/01-architecture.md">01 · Architecture</a></td><td>Principles, 5-tier, token strategy, governance</td></tr>
+    <tr><td><a href="docs/02-button-spec.md">02 · Button Spec</a></td><td>Spec Button đầy đủ 12 mục</td></tr>
+    <tr><td><a href="docs/03-figma-structure.md">03 · Figma Structure</a></td><td>Cấu trúc Figma, naming, variables</td></tr>
+    <tr><td><a href="docs/04-frontend-implementation.md">04 · Frontend Guide</a></td><td>React + Tailwind, a11y, testing</td></tr>
+    <tr><td><a href="tokens/primitive.json">Design Tokens</a></td><td>primitive · semantic · component (JSON)</td></tr>
+  </table>
+  <div class="doc-footer">
+    <span>⬡ <strong>Lumin</strong> · K12Online Design System · v1.0 · 2026</span>
+    <span>Bộ GD&ĐT → Học sinh · Desktop · Tablet · Mobile</span>
+  </div>
+</section>
+
+</main>
+<script src="app.js"></script>
+</body>
+</html>
