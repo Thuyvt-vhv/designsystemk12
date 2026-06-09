@@ -193,3 +193,33 @@ document.querySelectorAll('.segmented').forEach(group => {
 document.querySelectorAll('.toast .t-close').forEach(x => {
   x.addEventListener('click', () => { x.closest('.toast').style.opacity = '0'; });
 });
+
+// ─── Comp card — Preview / Code tabs ───
+document.querySelectorAll('.comp-card').forEach(card => {
+  const tabs = card.querySelectorAll('.comp-tab');
+  const preview = card.querySelector('.comp-preview');
+  const code = card.querySelector('.comp-code');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const isCode = tab.dataset.tab === 'code';
+      if (preview) preview.hidden = isCode;
+      if (code) code.hidden = !isCode;
+    });
+  });
+});
+
+// ─── Copy button ───
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const code = btn.closest('.comp-code')?.querySelector('pre code')?.textContent;
+    if (!code) return;
+    navigator.clipboard.writeText(code).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+    });
+  });
+});

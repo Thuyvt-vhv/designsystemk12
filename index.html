@@ -15,10 +15,23 @@
 <header class="topbar">
   <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
   <a class="brand" href="#overview">
-    <img src="styles/Asset 1 1.svg" alt="K12Online" class="brand-logo" height="24">
+    <img src="styles/Asset 1 1.svg" alt="K12Online" class="brand-logo" height="22">
   </a>
-  <div class="topbar-search">🔍 Tìm component… <kbd>⌘K</kbd></div>
+  <span class="topbar-div"></span>
+  <nav class="topbar-nav">
+    <a class="tnav" href="#color">Foundations</a>
+    <a class="tnav" href="#button">Components</a>
+    <a class="tnav" href="#resources">Tokens</a>
+  </nav>
+  <div class="topbar-search">
+    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;opacity:.5"><circle cx="8.5" cy="8.5" r="5.75" stroke="currentColor" stroke-width="1.5"/><path d="m14 14 3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    Tìm component…
+    <kbd>⌘K</kbd>
+  </div>
   <div class="topbar-actions">
+    <a class="gh-link" href="https://github.com/Thuyvt-vhv/designsystemk12" target="_blank" title="GitHub" aria-label="GitHub">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+    </a>
     <span class="ver-badge">v1.0</span>
     <button class="theme-toggle" id="themeToggle" aria-label="Theme">🌙</button>
   </div>
@@ -191,65 +204,119 @@
 
 <!-- ───── BUTTON ───── -->
 <section class="section" id="button">
-  <div class="eyebrow">Buttons</div>
-  <h1>Button</h1>
-  <p class="lead">5 kiểu: Primary, Secondary (viền xanh), Tertiary (viền xám), Danger (viền đỏ), Button link. Cao 36px · radius 8px · icon 20px · font 14px medium.</p>
+  <div class="eyebrow">Components · Actions</div>
+  <h1>Button <span class="s-badge stable">Stable</span></h1>
+  <p class="lead">5 variant: Primary, Secondary (viền xanh), Tertiary (viền xám), Danger (viền đỏ), Link. Đầy đủ 5 size, icon, loading, disabled.</p>
 
-  <h3>Variants × States</h3>
-  <div class="demo"><div class="demo-stage col" style="gap:18px">
-    <div class="row"><span style="width:90px" class="muted">Primary</span>
-      <button class="btn btn--primary btn--md"><span class="ic">＋</span> Button CTA</button>
-      <button class="btn btn--primary btn--md" style="background:var(--c-blue-800)"><span class="ic">＋</span> Hover</button>
-      <button class="btn btn--primary btn--md" style="box-shadow:var(--focus-ring)"><span class="ic">＋</span> Focus</button>
-      <button class="btn btn--primary btn--md" disabled><span class="ic">＋</span> Disable</button>
+  <h2>Variants</h2>
+  <div class="comp-card">
+    <div class="comp-card-head">
+      <span class="comp-card-title">Primary · Secondary · Tertiary · Danger · Link — Default / Hover / Focus / Disabled</span>
+      <div class="comp-tabs">
+        <button class="comp-tab active" data-tab="preview">Preview</button>
+        <button class="comp-tab" data-tab="code">Code</button>
+      </div>
     </div>
-    <div class="row"><span style="width:90px" class="muted">Secondary</span>
-      <button class="btn btn--secondary btn--md">Button CTA</button>
-      <button class="btn btn--secondary btn--md" style="background:var(--c-blue-50)">Hover</button>
-      <button class="btn btn--secondary btn--md" style="box-shadow:var(--focus-ring)">Focus</button>
-      <button class="btn btn--secondary btn--md" disabled>Disable</button>
+    <div class="comp-preview col" style="gap:18px">
+      <div class="row"><span style="width:90px" class="muted">Primary</span>
+        <button class="btn btn--primary btn--md"><span class="ic">＋</span> Button CTA</button>
+        <button class="btn btn--primary btn--md" style="background:var(--c-blue-800)"><span class="ic">＋</span> Hover</button>
+        <button class="btn btn--primary btn--md" style="box-shadow:var(--focus-ring)"><span class="ic">＋</span> Focus</button>
+        <button class="btn btn--primary btn--md" disabled><span class="ic">＋</span> Disable</button>
+      </div>
+      <div class="row"><span style="width:90px" class="muted">Secondary</span>
+        <button class="btn btn--secondary btn--md">Button CTA</button>
+        <button class="btn btn--secondary btn--md" style="background:var(--c-blue-50)">Hover</button>
+        <button class="btn btn--secondary btn--md" style="box-shadow:var(--focus-ring)">Focus</button>
+        <button class="btn btn--secondary btn--md" disabled>Disable</button>
+      </div>
+      <div class="row"><span style="width:90px" class="muted">Tertiary</span>
+        <button class="btn btn--tertiary btn--md">Button CTA</button>
+        <button class="btn btn--tertiary btn--md" style="background:var(--surface-muted)">Hover</button>
+        <button class="btn btn--tertiary btn--md" style="box-shadow:var(--focus-ring)">Focus</button>
+        <button class="btn btn--tertiary btn--md" disabled>Disable</button>
+      </div>
+      <div class="row"><span style="width:90px" class="muted">Danger</span>
+        <button class="btn btn--danger btn--md">Button CTA</button>
+        <button class="btn btn--danger btn--md" style="background:var(--c-error-50)">Hover</button>
+        <button class="btn btn--danger btn--md" style="box-shadow:var(--focus-ring-error)">Focus</button>
+        <button class="btn btn--danger btn--md" disabled>Disable</button>
+      </div>
+      <div class="row"><span style="width:90px" class="muted">Icon only</span>
+        <button class="icon-btn" aria-label="Đóng">✕</button>
+        <button class="icon-btn bordered" aria-label="Cài đặt">⚙</button>
+      </div>
+      <div class="row"><span style="width:90px" class="muted">Link</span>
+        <button class="btn btn--link">Button link</button>
+        <button class="btn btn--link" disabled>Disable</button>
+      </div>
     </div>
-    <div class="row"><span style="width:90px" class="muted">Tertiary</span>
-      <button class="btn btn--tertiary btn--md">Button CTA</button>
-      <button class="btn btn--tertiary btn--md" style="background:var(--surface-muted)">Hover</button>
-      <button class="btn btn--tertiary btn--md" style="box-shadow:var(--focus-ring)">Focus</button>
-      <button class="btn btn--tertiary btn--md" disabled>Disable</button>
-    </div>
-    <div class="row"><span style="width:90px" class="muted">Danger</span>
-      <button class="btn btn--danger btn--md">Button CTA</button>
-      <button class="btn btn--danger btn--md" style="background:var(--c-error-50)">Hover</button>
-      <button class="btn btn--danger btn--md" style="box-shadow:var(--focus-ring-error)">Focus</button>
-      <button class="btn btn--danger btn--md" disabled>Disable</button>
-    </div>
-    <div class="row"><span style="width:90px" class="muted">Only icon</span>
-      <button class="icon-btn" aria-label="Đóng">✕</button>
-      <button class="icon-btn" aria-label="Đóng" style="background:var(--surface-overlay)">✕</button>
-      <button class="icon-btn bordered" aria-label="Cài đặt">⚙</button>
-    </div>
-    <div class="row"><span style="width:90px" class="muted">Button link</span>
-      <button class="btn btn--link">Button link</button>
-      <button class="btn btn--link" disabled>Disable</button>
-    </div>
-  </div><div class="demo-caption">Default · Hover (đậm 10%) · Focus (đậm 20% + ring) · Disable (xám)</div></div>
+    <div class="comp-code" hidden>
+      <button class="copy-btn">Copy</button>
+<pre><code>&lt;!-- Primary --&gt;
+&lt;button class="btn btn--primary btn--md"&gt;
+  &lt;span class="ic"&gt;＋&lt;/span&gt; Thêm mới
+&lt;/button&gt;
 
-  <h3>Sizes</h3>
-  <div class="demo"><div class="demo-stage" style="align-items:center">
-    <button class="btn btn--primary btn--xs"><span class="ic">＋</span> XS</button>
-    <button class="btn btn--primary btn--sm"><span class="ic">＋</span> Small</button>
-    <button class="btn btn--primary btn--md"><span class="ic">＋</span> Medium</button>
-    <button class="btn btn--primary btn--lg"><span class="ic">＋</span> Large</button>
-    <button class="btn btn--primary btn--xl"><span class="ic">＋</span> Extra Large</button>
-    <button class="btn btn--primary btn--md" aria-busy="true"><span class="spinner"></span> Loading</button>
-  </div><div class="demo-caption">28 · 32 · 36 · 40 · 44 px — MD mặc định</div></div>
+&lt;!-- Secondary --&gt;
+&lt;button class="btn btn--secondary btn--md"&gt;Hủy bỏ&lt;/button&gt;
 
-  <h3>Specs</h3>
-  <table class="spec">
-    <tr><th>Thuộc tính</th><th>Giá trị</th></tr>
-    <tr><td>Height</td><td>36px (MD)</td></tr>
-    <tr><td>Padding</td><td>12px (cạnh icon) · 8px (gap) · 16px (cạnh phải)</td></tr>
-    <tr><td>Corner radius</td><td>8px</td></tr>
-    <tr><td>Font</td><td>14px medium · line-height 20px</td></tr>
-    <tr><td>Icon</td><td>20px</td></tr>
+&lt;!-- Tertiary --&gt;
+&lt;button class="btn btn--tertiary btn--md"&gt;Lưu nháp&lt;/button&gt;
+
+&lt;!-- Danger (outline red) --&gt;
+&lt;button class="btn btn--danger btn--md"&gt;Từ chối&lt;/button&gt;
+
+&lt;!-- Destructive (solid red — dùng trong modal xóa) --&gt;
+&lt;button class="btn btn--destructive btn--md"&gt;Xóa&lt;/button&gt;
+
+&lt;!-- Disabled --&gt;
+&lt;button class="btn btn--primary btn--md" disabled&gt;Gửi&lt;/button&gt;
+
+&lt;!-- Loading --&gt;
+&lt;button class="btn btn--primary btn--md" aria-busy="true"&gt;
+  &lt;span class="spinner"&gt;&lt;/span&gt; Đang lưu…
+&lt;/button&gt;</code></pre>
+    </div>
+  </div>
+
+  <h2>Sizes</h2>
+  <div class="comp-card">
+    <div class="comp-card-head">
+      <span class="comp-card-title">XS (28px) · SM (32px) · MD (36px) · LG (40px) · XL (44px)</span>
+      <div class="comp-tabs">
+        <button class="comp-tab active" data-tab="preview">Preview</button>
+        <button class="comp-tab" data-tab="code">Code</button>
+      </div>
+    </div>
+    <div class="comp-preview" style="align-items:center">
+      <button class="btn btn--primary btn--xs"><span class="ic">＋</span> XS</button>
+      <button class="btn btn--primary btn--sm"><span class="ic">＋</span> Small</button>
+      <button class="btn btn--primary btn--md"><span class="ic">＋</span> Medium</button>
+      <button class="btn btn--primary btn--lg"><span class="ic">＋</span> Large</button>
+      <button class="btn btn--primary btn--xl"><span class="ic">＋</span> Extra Large</button>
+      <button class="btn btn--primary btn--md" aria-busy="true"><span class="spinner"></span> Loading</button>
+    </div>
+    <div class="comp-code" hidden>
+      <button class="copy-btn">Copy</button>
+<pre><code>&lt;button class="btn btn--primary btn--xs"&gt;XS&lt;/button&gt;
+&lt;button class="btn btn--primary btn--sm"&gt;Small&lt;/button&gt;
+&lt;button class="btn btn--primary btn--md"&gt;Medium&lt;/button&gt;
+&lt;button class="btn btn--primary btn--lg"&gt;Large&lt;/button&gt;
+&lt;button class="btn btn--primary btn--xl"&gt;Extra Large&lt;/button&gt;</code></pre>
+    </div>
+  </div>
+
+  <h2>API</h2>
+  <table class="prop-table">
+    <thead><tr><th>Prop / Class</th><th>Type</th><th>Default</th><th>Mô tả</th></tr></thead>
+    <tbody>
+      <tr><td class="pt-prop">btn--{variant}</td><td class="pt-type">"primary"|"secondary"|"tertiary"|"danger"|"destructive"|"ghost"|"link"</td><td class="pt-default">primary</td><td>Kiểu hiển thị</td></tr>
+      <tr><td class="pt-prop">btn--{size}</td><td class="pt-type">"xs"|"sm"|"md"|"lg"|"xl"</td><td class="pt-default">md</td><td>Kích thước nút</td></tr>
+      <tr><td class="pt-prop">disabled</td><td class="pt-type">boolean</td><td class="pt-default">false</td><td>Vô hiệu hoá nút</td></tr>
+      <tr><td class="pt-prop">aria-busy</td><td class="pt-type">boolean</td><td class="pt-default">false</td><td>Trạng thái loading — kết hợp với .spinner</td></tr>
+      <tr><td class="pt-prop">btn--block</td><td class="pt-type">modifier</td><td class="pt-default">—</td><td>Full width (width: 100%)</td></tr>
+    </tbody>
   </table>
 </section>
 
@@ -560,14 +627,41 @@
 
 <!-- ───── TOAST ───── -->
 <section class="section" id="toast">
-  <div class="eyebrow">Feedback</div>
-  <h1>Toast message</h1>
-  <p class="lead">Thông báo nổi với viền màu dưới đáy + icon tròn. Success / Thất bại / Thông báo.</p>
-  <div class="demo"><div class="demo-stage col center" style="gap:16px">
-    <div class="toast success"><span class="t-icon">✓</span><div class="t-body"><div class="t-title">Thành công</div><div class="t-msg">Thêm mới bản ghi thành công</div></div><span class="t-close">✕</span></div>
-    <div class="toast error"><span class="t-icon">✕</span><div class="t-body"><div class="t-title">Thất bại</div><div class="t-msg">Thêm mới thất bại</div></div><span class="t-close">✕</span></div>
-    <div class="toast warning"><span class="t-icon">!</span><div class="t-body"><div class="t-title">Thông báo</div><div class="t-msg">Dữ liệu lớn, vui lòng chờ thêm</div></div><span class="t-close">✕</span></div>
-  </div></div>
+  <div class="eyebrow">Components · Feedback</div>
+  <h1>Toast message <span class="s-badge stable">Stable</span></h1>
+  <p class="lead">Thông báo nổi với viền màu dưới đáy 3px + icon tròn đặc. Pattern đặc trưng của K12Online.</p>
+  <div class="comp-card">
+    <div class="comp-card-head">
+      <span class="comp-card-title">Success · Error · Warning — viền màu dưới đáy + icon tròn</span>
+      <div class="comp-tabs">
+        <button class="comp-tab active" data-tab="preview">Preview</button>
+        <button class="comp-tab" data-tab="code">Code</button>
+      </div>
+    </div>
+    <div class="comp-preview col center" style="gap:16px">
+      <div class="toast success"><span class="t-icon">✓</span><div class="t-body"><div class="t-title">Thành công</div><div class="t-msg">Thêm mới bản ghi thành công</div></div><span class="t-close">✕</span></div>
+      <div class="toast error"><span class="t-icon">✕</span><div class="t-body"><div class="t-title">Thất bại</div><div class="t-msg">Thêm mới thất bại</div></div><span class="t-close">✕</span></div>
+      <div class="toast warning"><span class="t-icon">!</span><div class="t-body"><div class="t-title">Thông báo</div><div class="t-msg">Dữ liệu lớn, vui lòng chờ thêm</div></div><span class="t-close">✕</span></div>
+    </div>
+    <div class="comp-code" hidden>
+      <button class="copy-btn">Copy</button>
+<pre><code>&lt;!-- Toast Success --&gt;
+&lt;div class="toast success"&gt;
+  &lt;span class="t-icon"&gt;✓&lt;/span&gt;
+  &lt;div class="t-body"&gt;
+    &lt;div class="t-title"&gt;Thành công&lt;/div&gt;
+    &lt;div class="t-msg"&gt;Thêm mới bản ghi thành công&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="t-close"&gt;✕&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Toast Error --&gt;
+&lt;div class="toast error"&gt;...&lt;/div&gt;
+
+&lt;!-- Toast Warning --&gt;
+&lt;div class="toast warning"&gt;...&lt;/div&gt;</code></pre>
+    </div>
+  </div>
   <h3>Alert (inline)</h3>
   <div class="demo"><div class="demo-stage col">
     <div class="alert alert--info"><span class="a-icon">ℹ</span><div><div class="a-title">Lịch thi đã cập nhật</div>Kỳ thi học kỳ 1 bắt đầu từ 20/12/2026.</div></div>
